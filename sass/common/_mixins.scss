@@ -1,0 +1,28 @@
+// border radius
+@mixin border-radius($radius) {
+	 -webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+		 -ms-border-radius: $radius;
+			 border-radius: $radius;
+}
+// transition
+@mixin transition($option, $time){
+	-webkit-transition: $option $time ease-in-out;
+	   -moz-transition: $option $time ease-in-out;
+			transition: $option $time ease-in-out; 
+}
+// transform
+@mixin transform($value){
+	-webkit-transform: $value;
+	   -moz-transform: $value;
+	    -ms-transform: $value;
+			transform: $value; 
+}
+@mixin montserrat($value) {
+	font-family: $montserrat;
+	font-weight: $value;
+}
+@mixin playfair($value) {
+	font-family: $playfair;
+	font-weight: $value;
+}

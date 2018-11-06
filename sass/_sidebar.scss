@@ -1,0 +1,232 @@
+/*-------------------------
+	11.0 - sidebar
+--------------------------*/
+.widget {
+	margin-bottom: 75px;
+	&.no-border {
+		border-bottom: 0;
+	}
+	.widget-title {
+		@include montserrat(700);
+		font-size: 16px;
+		line-height: 25px;
+		margin-bottom: 35px;
+		color: $black;
+		text-transform: uppercase;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&.widget_search {
+		position: relative;
+		padding: 0 !important;
+		border: 0;
+		label {
+			width: 100%;
+			margin-bottom: 0;
+		}
+		.screen-reader-text {
+			@include montserrat(700);
+			font-size: 16px;
+			line-height: 30px;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+			display: block;
+			color: $black;
+		}
+		.search-field {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			border: 1px solid #cccccc;
+			@include montserrat(400);
+			font-size: 16px;
+			padding-left: 17px;
+
+			&::-webkit-input-placeholder {
+				color: $black;
+				@include montserrat(400);
+				font-size: 16px;
+				opacity: .50;
+			}
+			&:-moz-placeholder { /* Firefox 18- */
+				color: $black;
+				@include montserrat(400);
+				font-size: 16px;
+				opacity: .50;
+			}
+			&::-moz-placeholder {  /* Firefox 19+ */
+				color: $black;
+				@include montserrat(400);
+				font-size: 16px;
+				opacity: .50; 
+			}
+			&:-ms-input-placeholder {  
+				color: $black;
+				@include montserrat(400);
+				font-size: 16px;
+				opacity: .50;  
+			}
+
+		}
+		.search-field:focus,
+		.search-submit:focus {
+			outline: none;
+		}
+		.search-submit {
+			position: absolute;
+			right: 15px;
+			bottom: 0;
+		    height: 50px;
+		    border-radius: 0;
+		    border: 0;
+		    margin-left: -5px;
+		    background: none;
+		    color: $black;
+		    opacity: .25;
+		    @include transition(color, .3s);
+
+		    &:hover {
+		    	color: $black-light;
+		    }
+		}
+	}
+}
+
+
+
+/*************** 11.1 - tag widget ***************/
+.tagcloud a {
+	display: inline-block;
+	@include montserrat(400);
+	font-size: 12px;
+	color: $black;
+	line-height: 26px;
+	padding: 0 10px;
+	border: 1px solid #eeeeee;
+	margin-right: 0;
+	margin-bottom: 5px;
+	@include transition(all, .3s);
+	text-transform: uppercase;      
+	background: $bg-gray;                   
+	&:hover {
+		background-color: $white;
+		text-decoration: none;
+	}
+
+
+}
+
+/*************** 11.2 - catagories widget ***************/
+
+.widget_categories li {
+	position: relative;
+	margin-bottom: 30px;
+	a {
+		@include montserrat(400);
+		font-size: 16px;
+		color: $black;
+		@include transition(color, .3s);
+		opacity: .5;
+		&:hover {
+			color: $black-light;
+		}
+
+	}
+	span {
+		@extend a;
+		float: right;
+	}
+}
+/***************  11.3 - social widget ***************/
+.widget_social {
+	a {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		background: #f2f2f2;
+		color: #7d7d7d;
+		text-align: center;
+		line-height: 35px;
+		margin-right: 10px;
+		@include transition(color, .3s);
+		&:hover {
+			color: $black;
+			opacity: 1;
+		}
+	}
+}
+/***************  11.4 - recent post widget ***************/
+.widget_recent_entries li {
+	margin-bottom: 30px;
+	a {
+		display: block;
+		@include montserrat(700);
+		font-size: 13px;
+		color: $black;
+		@include transition(color, .3s);
+		margin-bottom: 10px;
+		&:hover {
+			color: $black;
+			opacity: .5;
+		}
+	}
+	p {
+		@include montserrat(400);
+		font-size: 13px;
+		line-height: 26px;
+		opacity: .5;
+
+	}
+	.media-body {
+		padding-top: 5px;
+	}
+
+}
+/***************  11.5 - widget tweets ***************/
+.widget_tweets {
+	.widget-title {
+		margin-bottom: 15px;
+	}
+	ul {
+		li {
+			border-bottom: 1px solid #e5e5e5;
+			padding: 20px 0;
+			&:last-child {
+				border-bottom: 0;
+			}
+			p {
+				position: relative;
+				@include montserrat(400);
+				line-height: 20px;
+				font-size: 13px;
+				color: $black;
+				opacity: .5;
+				margin-left: 35px;
+				&:before {
+				    position: absolute;
+				    left: -36px;
+				    top: 25px;
+				    content: '\f099';
+				    font-family: FontAwesome;
+				    font-size: 25px;
+				}
+				&>span {
+					color: #000000 !important;
+					opacity: 1 !important;
+				}
+			}
+			.time {
+				@include montserrat(400);
+				line-height: 20px;
+				font-size: 13px;
+				text-transform: none;
+				color: $black;
+				margin-left: 35px;
+			}
+		}
+	}
+}
